@@ -22,7 +22,7 @@ Descreva os motivo pelos quais essas mudanças são importantes para o projeto e
 
 ## Tipo de alteração
 
-Selecione as opções que contemplam suas alterações:
+Selecione as opções que contemplam suas alterações (marque com um x minúsculo sem espaços)
 
 - [ ] Correção de Bug (Alteração que corrige um problema)
 - [ ] Nova funcionalidade (Implementação de coisas novas)
