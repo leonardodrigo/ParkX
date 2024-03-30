@@ -2,5 +2,8 @@ __pycache__/
 __init__.py
 tests/__init__.py
 tests/__pycache__
+parkx/__init__.py
+parkx/__pycache__
 .DS_Store
+static/.DS_Store
 .coverage
