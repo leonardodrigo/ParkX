@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-admin.site.site_header = 'ParkX Admin'  
+admin.site.site_header = 'ParkX Admin'
 admin.site.index_title = 'Configurações de administração'
 
 urlpatterns = [

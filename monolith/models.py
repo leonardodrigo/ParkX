@@ -12,7 +12,7 @@ class Estacionamento(models.Model):
 
     def __str__(self):
         return self.nome
-    
+
     class Meta():
         ordering = ['nome']
 
@@ -54,7 +54,7 @@ class Funcionario(models.Model):
 
     def __str__(self):
         return self.nome
-    
+
     def Meta():
         ordering = ['nome']
 
@@ -77,7 +77,9 @@ class Veiculo(models.Model):
     def Meta():
         ordering = ['placa']
 
+
 class Pagamento(models.Model):
+
     TIPO_PAGAMENTO = (
         ('D', 'Débito'),
         ('C', 'Crédito'),
@@ -100,6 +102,6 @@ class Pagamento(models.Model):
 
     def __str__(self):
         return str(self.valor)
-    
+
     def Meta():
         ordering = ['valor']
