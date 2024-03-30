@@ -12,6 +12,9 @@ class Estacionamento(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta():
+        ordering = ['nome']
 
 
 class Vaga(models.Model):
@@ -31,6 +34,9 @@ class Vaga(models.Model):
     def __str__(self):
         return str(self.numero)
 
+    def Meta():
+        ordering = ['numero']
+
 
 class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
@@ -48,6 +54,9 @@ class Funcionario(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    def Meta():
+        ordering = ['nome']
 
 
 class Veiculo(models.Model):
@@ -65,6 +74,8 @@ class Veiculo(models.Model):
     def __str__(self):
         return self.placa
 
+    def Meta():
+        ordering = ['placa']
 
 class Pagamento(models.Model):
     TIPO_PAGAMENTO = (
@@ -89,3 +100,6 @@ class Pagamento(models.Model):
 
     def __str__(self):
         return str(self.valor)
+    
+    def Meta():
+        ordering = ['valor']
