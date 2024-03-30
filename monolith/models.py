@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Estacionamento(models.Model):
     nome = models.CharField(max_length=100)
@@ -11,6 +12,7 @@ class Estacionamento(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 class Vaga(models.Model):
     TIPO_VAGA = (
@@ -29,6 +31,7 @@ class Vaga(models.Model):
     def __str__(self):
         return str(self.numero)
 
+
 class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
     cpf = models.CharField(max_length=11)
@@ -46,6 +49,7 @@ class Funcionario(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Veiculo(models.Model):
     marca = models.CharField(max_length=50)
     modelo = models.CharField(max_length=50)
@@ -60,7 +64,8 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return self.placa
-    
+
+
 class Pagamento(models.Model):
     TIPO_PAGAMENTO = (
         ('D', 'Débito'),
@@ -84,4 +89,3 @@ class Pagamento(models.Model):
 
     def __str__(self):
         return str(self.valor)
-
