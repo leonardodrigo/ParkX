@@ -1,9 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
 
+router = DefaultRouter()
+router.register('estacionamentos', views.EstacionamentoViewSet)
+router.urls
+
+
 urlpatterns = [
-    path('', views.index, name='index_blank'),
+    path('', include(router.urls)),
     path('index.html', views.index, name='index'),
 
     path('buttons.html', views.buttons, name='buttons'),

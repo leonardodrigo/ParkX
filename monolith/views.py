@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Estacionamento
+from .serializers import EstacionamentoSerializer
 
 
 # Create your views here.
@@ -56,3 +59,12 @@ def charts(request):
 
 def tables(request):
     return render(request, 'tables.html')
+
+
+class EstacionamentoViewSet(ModelViewSet):
+
+    queryset = Estacionamento.objects.all()
+    serializer_class = EstacionamentoSerializer
+
+    def get_serializer_context(self):
+        return {'request': self.request}
