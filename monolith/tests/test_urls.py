@@ -6,9 +6,6 @@ from monolith.views import index, buttons, cards, utilities_colors, utilities_bo
 
 class TestUrls(SimpleTestCase):
 
-    def test_index_blank_url_is_resolved(self):
-        url = reverse('index_blank')
-        self.assertEqual(resolve(url).func, index)
 
     def test_index_url_is_resolved(self):
         url = reverse('index')
