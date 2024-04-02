@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -38,31 +39,94 @@
                             </div>
                             <form class="Úsuario">
                                 <div class="form-group row">
+                                    <label for="inputName" class="form-label"><strong>Nome</strong></label>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Primeiro Nome">
+                                   <input type="text" class="form-control form-control-user" id="exampleFirstName">
                                     </div>
+                                    <label for="inputLastName" class="form-label"><strong>Sobrenome</strong></label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Último Nome">
+                                        <input type="text" class="form-control form-control-user" id="exampleLastName">
+                                            
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email">
+                                    <label for="inputEmail" class="form-label"><strong>Email</strong></label>
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                             <input type="email" class="form-control form-control-user" id="exampleInputEmail">
+                                                <div class="form-group">
                                 </div>
+
                                 <div class="form-group row">
+                                    <label for="inputRepeatEmail" class="form-label"><strong>Repita seu Email</strong></label>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Senha">
+                                            id="exampleInputPassword" >
                                     </div>
-                                    <div class="col-sm-6">
+                                    
+                                        <label for="inputRepeatPassword" class="form-label"><strong>Repita a sua Senha</strong></label>
+                                        <div class="col-sm-6"></div>
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repita a senha">
+                                            id="exampleRepeatPassword">
                                     </div>
                                 </div>
+                                <form class="row g-3">
+                                                                        
+                                    
+                                      <label for="inputAddress" class="form-label"><strong>Endereço</strong></label>
+                                    <div class="col-12">
+                                      <input type="text" class="form-control" id="inputAddress" >
+                                    </div>
+                                    <div class="col-12">
+                                     
+                                        <label for="inputCity" class="form-label"><strong>Cidade</strong></label>
+                                    <div class="col-md-6">
+                                      <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <label for="inputState" class="form-label"><strong>Estado</strong></label>
+                                    <div class="col-md-4">
+                                      <select id="inputState" class="form-select">
+                                        <option selected>Escolha...</option>
+                                        <option>AC</option>
+                                        <option>AL</option>
+                                        <option>AP</option>
+                                        <option>AM</option>
+                                        <option>BA</option>
+                                        <option>CE</option>
+                                        <option>DF</option>
+                                        <option>ES</option>
+                                        <option>GO</option>
+                                        <option>MA</option>
+                                        <option>MT</option>
+                                        <option>MS</option>
+                                        <option>MG</option>
+                                        <option>PA</option>
+                                        <option>PB</option>
+                                        <option>PR</option>
+                                        <option>PE</option>
+                                        <option>PI</option>
+                                        <option>RJ</option>
+                                        <option>RN</option>
+                                        <option>RS</option>
+                                        <option>RO</option>
+                                        <option>RR</option>
+                                        <option>SC</option>
+                                        <option>SP</option>
+                                        <option>SE</option>
+                                        <option>TO</option>
+
+                                      </select>
+                                    </div>
+                                    
+                                      <label for="inputZip" class="form-label"><strong>CEP</strong></label>
+                                      <div class="col-md-2">
+                                      <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                
+                                  </form>
+
+
                                 <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Registre-se
+                                   <p>Registre-se</p> 
                                 </a>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
