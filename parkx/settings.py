@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 import pymysql
 
 pymysql.version_info = (1, 4, 6, 'final', 0)
@@ -85,7 +86,8 @@ DATABASES = {
         'NAME': 'parkx',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'parkxunivesp'
+        'PASSWORD': ''
+        #'PASSWORD': os.environ.get('PARKX_DB_PASSWORD')
     }
 }
 

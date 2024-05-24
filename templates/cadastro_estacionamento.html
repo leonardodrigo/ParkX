@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Cadastro de Estacionamento</h1>
+
+    <!-- Formulário -->
+    <form method="post" action="{% url 'cadastro_estacionamento' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Informações do Estacionamento</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Estacionamento Central">
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco">Endereço:</label>
+                            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua das Palmeiras, 720">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="1198871662">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="estacionamentocentral@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj">CNPJ:</label>
+                            <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="38.758.844/0001-79">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Vagas do Estacionamento</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="vagas_carros">Vagas para Carros:</label>
+                            <input type="number" class="form-control" id="vagas_carros" name="vagas_carros" placeholder="25">
+                        </div>
+                        <div class="form-group">
+                            <label for="vagas_motos">Vagas para Motos:</label>
+                            <input type="number" class="form-control" id="vagas_motos" name="vagas_motos" placeholder="15">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+
+    {% if success_message %}
+    <div class="alert alert-success mt-3">
+        {{ success_message }}
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}
