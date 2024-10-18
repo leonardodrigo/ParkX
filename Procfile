@@ -1,0 +1,1 @@
+web gunicorn parkx.wsgi:application --log-file - 
