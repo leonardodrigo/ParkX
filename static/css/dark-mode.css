@@ -1,0 +1,67 @@
+/* Definir a cor de fundo escura para o conteúdo entre a tabela e o rodapé */
+body.dark-mode .container-fluid {
+    background-color: #121212; /* Cor de fundo escura para toda a página */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Cards */
+body.dark-mode .card {
+    background-color: #1e2328; /* Fundo mais escuro para os cards */
+    border: 1px solid #444; /* Bordas mais escuras */
+}
+
+/* Corpo do card, incluindo tabelas */
+body.dark-mode .card-body {
+    background-color: #1e2328; /* Fundo escuro no corpo do card */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Cabeçalho do card no modo escuro */
+body.dark-mode .card-header {
+    background-color: #343a40; /* Cor de fundo escura para o cabeçalho */
+    color: #e0e0e0; /* Texto claro no cabeçalho */
+    border-bottom: 1px solid #444; /* Borda mais escura no rodapé do cabeçalho */
+}
+
+/* Título do card no modo escuro */
+body.dark-mode .card-header h6 {
+    color: #e0e0e0; /* Cor do texto do título do card em modo escuro */
+}
+
+/* Tabelas */
+body.dark-mode table {
+    background-color: #1e2328; /* Fundo escuro das tabelas */
+    color: #e0e0e0; /* Cor do texto */
+}
+
+body.dark-mode table thead {
+    background-color: #343a40; /* Cabeçalho da tabela */
+    color: #e0e0e0; /* Texto claro no cabeçalho */
+}
+
+body.dark-mode table tbody tr:nth-child(odd) {
+    background-color: #2f363f; /* Linhas alternadas */
+}
+
+body.dark-mode table tbody tr:hover {
+    background-color: #444; /* Hover na linha da tabela */
+}
+
+/* Rodapé */
+body.dark-mode footer {
+    background-color: #1f1f1f; /* Fundo escuro para o rodapé */
+    color: #e0e0e0; /* Texto claro */
+    border-top: 1px solid #444; /* Borda superior */
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Links no rodapé */
+body.dark-mode footer a {
+    color: #007bff;
+}
+
+body.dark-mode footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

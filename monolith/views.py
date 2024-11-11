@@ -75,8 +75,8 @@ def cadastrar_veiculo(request):
             vaga = Vaga.objects.get(pk=vaga_id)
             vaga.ocupada = True
             vaga.save()
-            return redirect('index')
-    return redirect('index')
+            return redirect('home')
+    return redirect('home')
 
 def verificar_placa(request):
     if request.method == 'POST':
@@ -94,5 +94,4 @@ def excluir_veiculo(request, veiculo_id):
         vaga.ocupada = False
         vaga.save()
         messages.success(request, 'Veículo excluído com sucesso!')
-    return redirect('index')
-
+    return redirect('home')

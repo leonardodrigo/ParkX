@@ -14,6 +14,10 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # This will load environment variables from a .env file if it exists
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,7 +92,7 @@ DATABASES = {
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
+        'PORT': '5433',
     }
 }
 

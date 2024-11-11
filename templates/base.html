@@ -19,6 +19,9 @@
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
 
+    <!-- Additional CSS for Dark Mode -->
+    <link id="dark-mode-stylesheet" href="{% static 'css/dark-mode.css' %}" rel="stylesheet" disabled>
+
 </head>
 
 <body id="page-top">
@@ -30,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'home' %}">
                 <div class="sidebar-brand-text mx-3">ParkX</div>
             </a>
 
@@ -39,16 +42,25 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{% url 'home' %}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-                <a class="nav-link" href="cadastro_estacionamento.html">
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="{% url 'cadastro_estacionamento' %}">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Cadastro</span></a>
+                    <span>Cadastro</span>
+                </a>
+                <!-- Nav Item - Dark Mode Toggle -->
+                <a class="nav-link" href="javascript:void(0);" onclick="toggleDarkMode()">
+                    <i class="fas fa-fw fa-moon" id="dark-mode-icon"></i>  <!-- Ícone de lua para Modo Escuro -->
+                    <span id="dark-mode-text">Modo Escuro</span>
+                </a>
             </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
-             <!-- Sidebar Toggler (Sidebar) -->
+
+            <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
@@ -73,13 +85,14 @@
                     {% block content %}
                     {% endblock %}
                     
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; ParkX 2024</span>
@@ -98,6 +111,48 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <!-- Add JavaScript for Dark Mode -->
+    <script>
+        function toggleDarkMode() {
+            var body = document.body;
+            var darkModeStylesheet = document.getElementById('dark-mode-stylesheet');
+            var darkModeText = document.getElementById('dark-mode-text');
+            var darkModeIcon = document.getElementById('dark-mode-icon');
+
+            // Toggle dark mode class
+            body.classList.toggle('dark-mode');
+
+            // Toggle dark mode stylesheet
+            if (body.classList.contains('dark-mode')) {
+                darkModeStylesheet.removeAttribute('disabled');
+                localStorage.setItem('theme', 'dark');
+                // Change button text and icon
+                darkModeText.innerHTML = 'Modo Claro';
+                darkModeIcon.classList.remove('fa-moon');
+                darkModeIcon.classList.add('fa-sun');
+            } else {
+                darkModeStylesheet.setAttribute('disabled', 'true');
+                localStorage.setItem('theme', 'light');
+                // Change button text and icon
+                darkModeText.innerHTML = 'Modo Escuro';
+                darkModeIcon.classList.remove('fa-sun');
+                darkModeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // On page load, check for saved theme preference
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-stylesheet').removeAttribute('disabled');
+                // Update the button to show "Modo Claro" and sun icon
+                document.getElementById('dark-mode-text').innerHTML = 'Modo Claro';
+                document.getElementById('dark-mode-icon').classList.remove('fa-moon');
+                document.getElementById('dark-mode-icon').classList.add('fa-sun');
+            }
+        });
+    </script>
 
 </body>
 
